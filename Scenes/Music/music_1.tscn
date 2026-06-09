@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfi7sxekr8rs7"]
-
-[ext_resource type="AudioStream" uid="uid://duko5esamd7vb" path="res://Sound/BG/theme_ruine.mp3" id="1_duhxm"]
-
-[node name="music_1" type="AudioStreamPlayer2D"]
-process_mode = 3
-stream = ExtResource("1_duhxm")
-autoplay = true

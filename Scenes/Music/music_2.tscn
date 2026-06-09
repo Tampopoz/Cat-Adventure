@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://v1pkrgm0vev"]
-
-[ext_resource type="AudioStream" uid="uid://tn3byleva24j" path="res://Sound/BG/little-slime.mp3" id="1_68plo"]
-
-[node name="music" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_68plo")
-autoplay = true
