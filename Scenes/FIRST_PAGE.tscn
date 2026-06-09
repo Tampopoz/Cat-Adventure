@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://cg1afr8ci0lnq"]
+
+[ext_resource type="Script" path="res://Scripts/FIRST_PAGE.gd" id="1_lbt5m"]
+[ext_resource type="PackedScene" uid="uid://bumausgalplog" path="res://Scenes/TRANSITION_MNGR.tscn" id="2_q4llb"]
+[ext_resource type="Texture2D" uid="uid://h8e0jbdalg6q" path="res://Assets/Wallpaper/First_Page.png" id="3_2nlkp"]
+[ext_resource type="PackedScene" uid="uid://ci4kcerjtpj6p" path="res://Scenes/Character/CAT.tscn" id="4_lmgdw"]
+[ext_resource type="FontFile" uid="uid://c0bx2lo24y703" path="res://Assets/Fonts/Pixel.ttf" id="5_na4uv"]
+[ext_resource type="Script" path="res://Scripts/LABEL.gd" id="6_52kda"]
+[ext_resource type="Texture2D" uid="uid://b2tpabjcagh0g" path="res://Assets/Button/UI3.png" id="7_a5d3q"]
+[ext_resource type="Texture2D" uid="uid://eivmafdmpi70" path="res://Assets/Button/UI1.png" id="8_ajdhf"]
+[ext_resource type="Texture2D" uid="uid://tcl5lg5xj3pn" path="res://Assets/Button/UI2.png" id="9_vx47a"]
+[ext_resource type="Script" path="res://Scripts/BTN_START.gd" id="10_mfwd4"]
+
+[node name="FIRST" type="Node"]
+script = ExtResource("1_lbt5m")
+
+[node name="TRANSITION_MNGR" parent="." instance=ExtResource("2_q4llb")]
+unique_name_in_owner = true
+
+[node name="BG_FP" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2nlkp")
+metadata/_edit_lock_ = true
+
+[node name="CAT_FP" parent="BG_FP" instance=ExtResource("4_lmgdw")]
+position = Vector2(463, 300)
+metadata/_edit_lock_ = true
+
+[node name="BT_START" type="Label" parent="."]
+z_index = 2
+z_as_relative = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -15.5
+offset_right = 41.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.184314, 0.0980392, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("5_na4uv")
+theme_override_font_sizes/font_size = 30
+text = "START"
+script = ExtResource("6_52kda")
+
+[node name="BT_START" type="TextureButton" parent="BT_START"]
+z_as_relative = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -57.5
+offset_right = -36.5
+offset_bottom = -25.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture_normal = ExtResource("7_a5d3q")
+texture_pressed = ExtResource("8_ajdhf")
+texture_hover = ExtResource("9_vx47a")
+script = ExtResource("10_mfwd4")
+
+[connection signal="pressed" from="BT_START/BT_START" to="BT_START/BT_START" method="_on_pressed"]

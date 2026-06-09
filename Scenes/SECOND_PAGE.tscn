@@ -1,0 +1,97 @@
+[gd_scene load_steps=17 format=3 uid="uid://bvjtb8u0jb0tc"]
+
+[ext_resource type="Texture2D" uid="uid://dn6ble8jdxk57" path="res://Assets/Wallpaper/Second_Page.png" id="1_g7fxh"]
+[ext_resource type="Script" path="res://Scripts/SECONDE_PAGE.gd" id="1_lgeip"]
+[ext_resource type="PackedScene" uid="uid://bumausgalplog" path="res://Scenes/TRANSITION_MNGR.tscn" id="2_81ka4"]
+[ext_resource type="Script" path="res://Scripts/BTN_BACK.gd" id="8_palvq"]
+[ext_resource type="PackedScene" uid="uid://v1pkrgm0vev" path="res://Scenes/Music/music_2.tscn" id="9_j6jrv"]
+[ext_resource type="Texture2D" uid="uid://cswlq4ogxoq51" path="res://Assets/Button/backbutton1.png" id="13_g8uxp"]
+[ext_resource type="Texture2D" uid="uid://dqxno24m6p80k" path="res://Assets/Button/backbutton3.png" id="14_m3im7"]
+[ext_resource type="Texture2D" uid="uid://fa8htglq24c2" path="res://Assets/Button/backbutton2.png" id="15_k67sb"]
+[ext_resource type="Texture2D" uid="uid://dkiio0lrspgy3" path="res://Assets/Button/BTNmikan1.png" id="15_ouvl4"]
+[ext_resource type="Script" path="res://Scripts/BTN_JIRO.gd" id="15_ycaib"]
+[ext_resource type="Texture2D" uid="uid://cqvtct81keb68" path="res://Assets/Button/BTNmikan3.png" id="16_cufvj"]
+[ext_resource type="Texture2D" uid="uid://obspw6pamxsy" path="res://Assets/Button/BTNmikan2.png" id="17_ivgtt"]
+[ext_resource type="Script" path="res://Scripts/BTN_MIKAN.gd" id="18_sbelh"]
+[ext_resource type="Texture2D" uid="uid://dju01i8afq3u6" path="res://Assets/Button/BTNjiro1.png" id="21_b87ma"]
+[ext_resource type="Texture2D" uid="uid://bb70lh2t61wqq" path="res://Assets/Button/BTNjiro3.png" id="22_7f482"]
+[ext_resource type="Texture2D" uid="uid://clmnecryyj6bm" path="res://Assets/Button/BTNjiro2.png" id="23_mc8rd"]
+
+[node name="SECOND" type="Node"]
+script = ExtResource("1_lgeip")
+
+[node name="TRANSITION_MNGR" parent="." instance=ExtResource("2_81ka4")]
+unique_name_in_owner = true
+
+[node name="MUSIC_2" parent="." instance=ExtResource("9_j6jrv")]
+unique_name_in_owner = true
+process_mode = 3
+
+[node name="BG_SC" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_g7fxh")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="BTN" type="Node" parent="."]
+
+[node name="BT_BACK" type="TextureButton" parent="BTN"]
+z_as_relative = false
+texture_filter = 1
+offset_left = -4.0
+offset_top = 451.0
+offset_right = 44.0
+offset_bottom = 499.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("13_g8uxp")
+texture_pressed = ExtResource("14_m3im7")
+texture_hover = ExtResource("15_k67sb")
+script = ExtResource("8_palvq")
+
+[node name="BT_MIKAN" type="TextureButton" parent="BTN"]
+z_as_relative = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 113.0
+offset_top = -208.0
+offset_right = 161.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture_normal = ExtResource("15_ouvl4")
+texture_pressed = ExtResource("16_cufvj")
+texture_hover = ExtResource("17_ivgtt")
+script = ExtResource("18_sbelh")
+
+[node name="BT_JIRO" type="TextureButton" parent="BTN"]
+z_as_relative = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.0
+offset_top = 35.0
+offset_right = -169.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture_normal = ExtResource("21_b87ma")
+texture_pressed = ExtResource("22_7f482")
+texture_hover = ExtResource("23_mc8rd")
+script = ExtResource("15_ycaib")
+
+[connection signal="pressed" from="BTN/BT_BACK" to="BTN/BT_BACK" method="_on_pressed"]
+[connection signal="pressed" from="BTN/BT_MIKAN" to="BTN/BT_MIKAN" method="_on_pressed"]
+[connection signal="pressed" from="BTN/BT_JIRO" to="BTN/BT_JIRO" method="_on_pressed"]

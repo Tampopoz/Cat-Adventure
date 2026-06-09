@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3db10eshcegb"]
+
+[ext_resource type="Script" path="res://Scripts/door_2.gd" id="1_7h188"]
+[ext_resource type="Texture2D" uid="uid://dx2rhoummyg00" path="res://Assets/OBJ/door2.png" id="2_8lhr7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rchk"]
+radius = 12.7646
+height = 38.0
+
+[node name="DOOR2" type="Area2D"]
+texture_filter = 1
+position = Vector2(715, 409)
+scale = Vector2(3.212, 3)
+script = ExtResource("1_7h188")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(-148.817, -106)
+texture = ExtResource("2_8lhr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-148.194, -104)
+shape = SubResource("CapsuleShape2D_6rchk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

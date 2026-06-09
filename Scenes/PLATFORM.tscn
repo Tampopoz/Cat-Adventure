@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtj8uajwigmmn"]
+
+[ext_resource type="Texture2D" uid="uid://62yockf50orh" path="res://Assets/TERRIAN/floor2.png" id="1_7fnmi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a6yj"]
+size = Vector2(60, 8)
+
+[node name="PLATFORM" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, 0)
+scale = Vector2(1.24, 1)
+texture = ExtResource("1_7fnmi")
+region_enabled = true
+region_rect = Rect2(239, 31, 50, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_5a6yj")
+one_way_collision = true

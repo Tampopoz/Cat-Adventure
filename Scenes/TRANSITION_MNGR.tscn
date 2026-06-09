@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bumausgalplog"]
+
+[ext_resource type="Script" path="res://Scripts/TRANSITION_MNGR.gd" id="1_affr0"]
+
+[node name="TRANSITION_MNGR" type="Node"]
+script = ExtResource("1_affr0")

@@ -1,0 +1,134 @@
+[gd_scene load_steps=10 format=3 uid="uid://btj4ej7badif8"]
+
+[ext_resource type="Script" path="res://Scripts/PAUSE_PAGE.gd" id="1_wrcnd"]
+[ext_resource type="FontFile" uid="uid://c0bx2lo24y703" path="res://Assets/Fonts/Pixel.ttf" id="2_ran5x"]
+[ext_resource type="Script" path="res://Scripts/LABEL.gd" id="3_m4xny"]
+[ext_resource type="Texture2D" uid="uid://b2tpabjcagh0g" path="res://Assets/Button/UI3.png" id="4_ab07w"]
+[ext_resource type="Texture2D" uid="uid://eivmafdmpi70" path="res://Assets/Button/UI1.png" id="5_du3t2"]
+[ext_resource type="Texture2D" uid="uid://tcl5lg5xj3pn" path="res://Assets/Button/UI2.png" id="6_8cxet"]
+[ext_resource type="Script" path="res://Scripts/BTN_RESUME.gd" id="7_cs6e1"]
+[ext_resource type="Script" path="res://Scripts/BTN_GO_FP.gd" id="8_ghepk"]
+[ext_resource type="PackedScene" uid="uid://bumausgalplog" path="res://Scenes/TRANSITION_MNGR.tscn" id="9_xnvva"]
+
+[node name="PAUSE_SCENE" type="Node"]
+process_mode = 3
+script = ExtResource("1_wrcnd")
+
+[node name="PAUSE_PANEL" type="Panel" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LABEL" type="Label" parent="PAUSE_PANEL"]
+process_mode = 3
+layout_mode = 0
+offset_left = 392.0
+offset_top = 276.0
+offset_right = 493.0
+offset_bottom = 299.0
+theme_override_font_sizes/font_size = 39
+text = "GAME PAUSE"
+
+[node name="RESUME_LABEL" type="Label" parent="PAUSE_PANEL/LABEL"]
+process_mode = 3
+z_index = 2
+z_as_relative = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = 60.0
+offset_right = 38.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.184314, 0.0980392, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("2_ran5x")
+theme_override_font_sizes/font_size = 30
+text = "RESUME"
+script = ExtResource("3_m4xny")
+
+[node name="BT_RESUME" type="TextureButton" parent="PAUSE_PANEL/LABEL/RESUME_LABEL"]
+process_mode = 3
+z_as_relative = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -58.5
+offset_right = -32.5
+offset_bottom = -26.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_ab07w")
+texture_pressed = ExtResource("5_du3t2")
+texture_hover = ExtResource("6_8cxet")
+script = ExtResource("7_cs6e1")
+
+[node name="HOME_LABEL" type="Label" parent="PAUSE_PANEL/LABEL"]
+process_mode = 3
+z_index = 2
+z_as_relative = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = 201.0
+offset_right = 32.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.184314, 0.0980392, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("2_ran5x")
+theme_override_font_sizes/font_size = 30
+text = "HOME"
+script = ExtResource("3_m4xny")
+
+[node name="BT_HOME" type="TextureButton" parent="PAUSE_PANEL/LABEL/HOME_LABEL"]
+process_mode = 3
+z_as_relative = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -58.5
+offset_right = -32.5
+offset_bottom = -26.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_ab07w")
+texture_pressed = ExtResource("5_du3t2")
+texture_hover = ExtResource("6_8cxet")
+script = ExtResource("8_ghepk")
+
+[node name="TRANSITION_MNGR" parent="." instance=ExtResource("9_xnvva")]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="PAUSE_PANEL/LABEL/RESUME_LABEL/BT_RESUME" to="." method="_on_btn_pressed_resume"]
+[connection signal="pressed" from="PAUSE_PANEL/LABEL/RESUME_LABEL/BT_RESUME" to="PAUSE_PANEL/LABEL/RESUME_LABEL/BT_RESUME" method="_on_pressed"]
+[connection signal="pressed" from="PAUSE_PANEL/LABEL/HOME_LABEL/BT_HOME" to="PAUSE_PANEL/LABEL/HOME_LABEL/BT_HOME" method="_on_pressed"]
