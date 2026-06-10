@@ -1,4 +1,4 @@
-# SP336 Godot Project
+# SP336 Godot Project (Vibe Coding)
 
 ## Project Description
 
